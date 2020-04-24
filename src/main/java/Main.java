@@ -761,22 +761,22 @@ public class Main {
     }
 }
 class ForTest {
-+    public static void TestDir(String path) throws IOException, ClassNotFoundException {
-        +        Integer a = new File(path).listFiles().length;
-        +        Directory.create(path, "new");
-        +        if (new File(path).listFiles().length != a + 1) {
-            +            Assert.fail();
-            +        } else {
-            +            System.out.println("OK");
-            +        }
-        +    }
-+
-        +    public static void getFile(Object o1, Object o2) {
-        +        if (o1.equals(o2)) {
-            +
-                    +            System.out.println("OK");
-            +            return;
-            +        }
-        +        Assert.fail();
-        +    }
-+}
+    public static void TestDir(String path) throws IOException, ClassNotFoundException {
+                Integer a = new File(path).listFiles().length;
+                Directory.create(path, "new");
+                if (new File(path).listFiles().length != a + 1) {
+                        Assert.fail();
+                    } else {
+                       System.out.println("OK");
+                    }
+            }
+
+            public static void getFile(Object o1, Object o2) {
+                if (o1.equals(o2)) {
+
+                                System.out.println("OK");
+                       return;
+                   }
+                Assert.fail();
+            }
+}
