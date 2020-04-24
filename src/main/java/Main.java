@@ -664,7 +664,7 @@ class FileCounter implements FSAction {
     }
 
     @Override
-    public Future<Integer> Do() throws IOException {
+    public Future<Long> Do() throws IOException {
         return new Counter(new FS(new File(path), 1).count(true));
     }
 }
@@ -760,3 +760,23 @@ public class Main {
        new  Controller().Go();
     }
 }
+class ForTest {
++    public static void TestDir(String path) throws IOException, ClassNotFoundException {
+        +        Integer a = new File(path).listFiles().length;
+        +        Directory.create(path, "new");
+        +        if (new File(path).listFiles().length != a + 1) {
+            +            Assert.fail();
+            +        } else {
+            +            System.out.println("OK");
+            +        }
+        +    }
++
+        +    public static void getFile(Object o1, Object o2) {
+        +        if (o1.equals(o2)) {
+            +
+                    +            System.out.println("OK");
+            +            return;
+            +        }
+        +        Assert.fail();
+        +    }
++}
